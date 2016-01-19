@@ -1,0 +1,29 @@
+<%= form_for(@has_clause) do |f| %>
+  <% if @has_clause.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@has_clause.errors.count, "error") %> prohibited this has_clause from being saved:</h2>
+
+      <ul>
+      <% @has_clause.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <% users_array = @users.all.map {|user| [user.name, user.id]} %> 
+    <%= f.select(:user_id, options_for_select(users_array)) %>
+  </div>
+  <div class="field">
+    <% clauses_array = @clauses.all.map {|clause| [clause.name, clause.id]} %> 
+    <%= f.select(:clause_id, options_for_select(clauses_array)) %>
+  </div>
+  <div class="field">
+    <%= f.label :seleccionada %><br>
+    <%= f.check_box :seleccionada %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

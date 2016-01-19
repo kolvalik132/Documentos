@@ -1,0 +1,25 @@
+<%= form_for(@has_document) do |f| %>
+  <% if @has_document.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@has_document.errors.count, "error") %> prohibited this has_document from being saved:</h2>
+
+      <ul>
+      <% @has_document.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <% users_array = @users.all.map {|user| [user.name, user.id]} %> 
+    <%= f.select(:user_id, options_for_select(users_array)) %>
+  </div>
+  <div class="field">
+    <% documents_array = @documents.all.map {|document| [document.title, document.id]} %> 
+    <%= f.select(:document_id, options_for_select(documents_array)) %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,17 @@
+<div style="width:80%;margin:0 auto;">
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Nombre clausula:</strong>
+  <%= @clause.name %>
+</p>
+
+<p>
+  <strong>Descripción del documento:</strong>
+  <%= @clause.description %>
+</p>
+
+
+<%= link_to 'Edit', edit_document_clause_path(@document,@clause) %> |
+<%= link_to 'Back', documents_path %>
+</div>

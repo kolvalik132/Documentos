@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>User:</strong>
+  <%= @has_clause.user %>
+</p>
+
+<p>
+  <strong>Clause:</strong>
+  <%= @has_clause.clause %>
+</p>
+
+<p>
+  <strong>Seleccionada:</strong>
+  <%= @has_clause.seleccionada %>
+</p>
+
+<%= link_to 'Edit', edit_has_clause_path(@has_clause) %> |
+<%= link_to 'Back', has_clauses_path %>

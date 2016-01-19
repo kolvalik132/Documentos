@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>User:</strong>
+  <%= @has_document.user %>
+</p>
+
+<p>
+  <strong>Document:</strong>
+  <%= @has_document.document %>
+</p>
+
+<%= link_to 'Edit', edit_has_document_path(@has_document) %> |
+<%= link_to 'Back', has_documents_path %>

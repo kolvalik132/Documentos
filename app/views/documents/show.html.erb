@@ -1,0 +1,32 @@
+<div style="width:80%;margin:0 auto;">
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Nombre Documento:</strong>
+  <%= @document.title %>
+</p>
+
+<p>
+  <strong>Descripción del documento:</strong>
+  <%= @document.body %>
+</p>
+
+<div class="field">
+	<h3> Agregar nueva clausula al documento</h3>
+	<%= render "clauses/form" %>
+<ul>
+	
+	<% @document.clauses.each do |clause| %>
+	<div>
+		<li>
+			<%= clause.name %> <br/>
+			<%= clause.description %> <br/> <br/>
+		</li>
+	</div>
+	<%end%>
+	
+</ul>
+</div>
+<%= link_to 'Edit', edit_document_path(@document) %> |
+<%= link_to 'Back', documents_path %>
+</div>

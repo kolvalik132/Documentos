@@ -1,0 +1,16 @@
+<div class="container" style="margin:0 auto;">
+  <h1>Documentos</h1>
+
+  <!-- Se realiza un render de los documentos hechos en _document.html.erb -->
+  <div class="row">
+    <%= render @documents %>
+  </div>
+
+  <!-- Luego de definir la cantidad de objetos que se mostraran en la vista (realizado en documents_controller.rb) esta funcionalidad
+  servira para cambiar a la siguiente pagina de la vista  -->
+  <div class="top-space">
+    <%= will_paginate @documents %>
+  </div>
+
+
+</div>

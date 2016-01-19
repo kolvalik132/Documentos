@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Producto</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/flexboxgrid/6.3.0/flexboxgrid.min.css">
+  <link href='https://fonts.googleapis.com/css?family=Roboto:400,300,700' rel='stylesheet' type='text/css'>
+</head>
+<body>
+	
+	<!-- Manda a renderizar a la carpeta partials el archivo navigation por lo cual lo que este en ese archivo se vera en todas las paginas del sistema -->
+	<%= render "partials/navigation" %>
+	
+<%= yield %>
+
+</body>
+</html>

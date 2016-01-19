@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Has Clauses</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>User</th>
+      <th>Clause</th>
+      <th>Seleccionada</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @has_clauses.each do |has_clause| %>
+      <tr>
+        <td><%= has_clause.user %></td>
+        <td><%= has_clause.clause %></td>
+        <td><%= has_clause.seleccionada %></td>
+        <td><%= link_to 'Show', has_clause %></td>
+        <td><%= link_to 'Edit', edit_has_clause_path(has_clause) %></td>
+        <td><%= link_to 'Destroy', has_clause, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Has clause', new_has_clause_path %>

@@ -1,0 +1,13 @@
+<div class="container" style="margin:0 auto;">
+  <h1>Usuarios</h1>
+
+  <!-- Se realiza un render de los documentos hechos en _document.html.erb -->
+  <div class="row">
+    <%= render @users %>
+  </div>
+
+  <div class="top-space">
+    <%= will_paginate @documents %>
+  </div>
+
+</div>

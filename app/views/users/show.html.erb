@@ -1,0 +1,43 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @user.name %>
+</p>
+
+<p>
+  <strong>Lastname:</strong>
+  <%= @user.lastname %>
+</p>
+
+<div class="field">
+<ul>
+	<h2>Documentos ligados</h2>
+	<% @user.documents.each do |document| %>
+	<div>
+		<li>
+			<%= document.title %> <br/>
+		</li>
+	</div>
+	<%end%>
+
+	<!-- Muestro los datos entre la relacion de las tablas  -->
+	<h2>Clausulas ligadas</h2>
+	<% @user.has_clauses.each do |clause| %> 
+	<div>
+		<li>
+			<%= clause.clause.name %> --
+			<% if clause.seleccionada? %>
+			Clausula seleccionada
+			<%else%>
+			Clausula no seleccionada
+			<%end%>
+		</li>
+	</div>
+	<%end%>
+	
+</ul>
+</div>
+
+<!-- Vuelvo al inicio de los usuarios -->
+<%= link_to 'Back', users_path %>

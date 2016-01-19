@@ -1,0 +1,17 @@
+<div class="col-md-4 top-space">
+
+	<div class="box relative article-height">
+		<!-- Defino el color de fondo que se mostrara en los objetos de los documentos -->
+		<div class="absolute article-height background-cover" style="background:#5DB8D8;top:0px;left:0px;width:100%;">
+		
+
+		<!-- Muestro los documentos y con link_to los mando al Show de tal documento -->
+		<div class="relative white text-center">
+			<h2><%= link_to user.name, user %></h2>
+			<p>
+				<%= truncate(user.lastname, length:50) %> <!-- Llamo al body del documento pero solo mostrando 50 caracteres -->
+			</p>
+		</div>
+		</div>
+	</div>
+</div>
